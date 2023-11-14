@@ -9,6 +9,9 @@ Neste repositório apresento uma série de exercícios e suas resoluções usand
 - **/Resolucoes/**
   - Pasta com as soluções correspondentes aos exercícios.
 
+## Links Úteis
+Na [Documentação do madagascar](https://www.reproducibility.org/wiki/Main_Page) você pode encontrar as instruções de como [baixar](https://www.reproducibility.org/wiki/Download) e [instalar](https://www.reproducibility.org/wiki/Installation) o software, bem como uma [lista com todos os programas](https://reproducibility.org/RSF/) disponíveis o que será de grande ajuda no apredizado e nos exercícios.
+
 ## Instruções de Uso
 1. Clone este repositório em sua máquina local.
 2. Navegue até a pasta de exercícios desejada.
@@ -16,4 +19,4 @@ Neste repositório apresento uma série de exercícios e suas resoluções usand
 4. Confira as resoluções na pasta correspondente para comparar suas soluções.
 
 ## Contato
-Se precisar de ajuda ou tiver alguma pergunta, entre em contato via email: [lucas.queiroz@ig.ufpa.br]{gmail.com}
+Se precisar de ajuda ou tiver alguma pergunta, entre em contato via email: lucas.queiroz@ig.ufpa.br
