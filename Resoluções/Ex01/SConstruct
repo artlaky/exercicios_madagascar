@@ -1,2 +1,25 @@
 from rsf.proj import *
+from math import pi
 
+samples = 20
+
+T = 2*pi
+
+dx = T / (samples - 1)
+
+Flow('T',None,
+     'math n1=%d o1=0 d1=%f output="x1"' %
+     (samples, dx))
+
+Flow('sin', 'T', 
+     'math output="sin(input)"')
+
+Result('sin_x','sin',
+       'graph title="sin(x) -> T"')
+
+Flow('T1', 'T', 'cp')
+
+Flow('T2', ['T', 'T1'], 'cat axis=1 ${SOURCES[1:2]}')
+
+
+End()
