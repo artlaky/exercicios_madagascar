@@ -1,0 +1,34 @@
+********** SÉRIE DE COMANDO PARA BOTAR NO TERMINAL E RESOLVER O EXERCÍCIO *****************
+
+1º PASSO:
+	Devemos criar uma matriz com as dimensões dadas. usamos aqui o sfspike pois queremos um vetor constante para a velocidade de fundo.
+	
+	sfspike n1=101 n2=201 d1=10 d2=10 k1=0 l1=101 k2=0 l2=201 mag=1500 > vb.rsf
+	
+2º PASSO:
+	Agora criamos outro vetor com as mesmas dimensões para fazer a pertubação retangular também usando o sfspike porém agora para criar um caixa.
+	
+	sfspike n1=101 n2=201 d1=10 d2=10 k1=31 l1=61 k2=81 l2=121 mag=1700 > v1.rsf
+	
+	Os parametros k1, l1, k2, l2 controlam onde está localizada a box e mag controla a sua intensidade.
+	
+3º PASSO:
+	Agora fazemos a soma dos dois arquivos para juntar a velocidade de fundo com a pertubação usando sfadd
+	
+	sfadd < vb v1 scale=1, 1 > v.rsf 
+	
+4º PASSO:
+	Agora fazemos o plot do arquivo v.rsf usando sfgrey e sfpen.
+	
+	< v.rsf sfgrey title=const_vel_model scalebar=y barreverse=y color=j bias=1500 label1=depth unit1=m label2=distance unit2=m barlabel=velocity barunit=m/s > vel_model.vpl
+	
+	Para vizualizar:
+	
+	< vel_model.vpl sfpen
+	
+Lista de comandos:
+	sfspike n1=101 n2=201 d1=10 d2=10 k1=0 l1=101 k2=0 l2=201 mag=1500 > vb.rsf
+	sfspike n1=101 n2=201 d1=10 d2=10 k1=31 l1=61 k2=81 l2=121 mag=1700 > v1.rsf
+	sfadd < vb.rsf v1.rsf scale=1, 1 > v.rsf 
+	< v.rsf sfgrey title=const_vel_model scalebar=y barreverse=y color=j bias=1500 label1=depth unit1=m label2=distance unit2=m barlabel=velocity barunit=m/s > vel_model.vpl
+	< vel_model.vpl sfpen

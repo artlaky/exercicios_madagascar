@@ -1,0 +1,38 @@
+********** SÉRIE DE COMANDO PARA BOTAR NO TERMINAL E RESOLVER O EXERCÍCIO *****************
+
+1º PASSO:
+	A primeira coisa que estamos buscando criar é um vetor que tenha 20 amostras começe na origem e tenha como espaçamento o valor do passo do periodo do sen(t). para isso vamos usar o programa sfspike.
+
+	Para achar esse passo é bem simples como o vetor tem 20 amostras temos 19 passos. a distância de um para o outro, ou seja, d1 será o periodo da função sen(t) dividido pelo número de passos, logo:
+
+d1 = 2*pi / 19
+
+	sfspike n1=20 d1=.33 output="x1" > periodo.rsf
+
+2º PASSO:
+	Use o sfdisfil para mostrar na tela o resultado
+
+	sfdisfil < periodo.rsf
+	
+3º PASSO:
+	copiar o vetor periodo.rsf para criar outro igual tanto o header como o binário usando sfcp
+	
+	sfcp < periodo.rsf > periodo2.rsf
+	
+4º PASSO:
+	Agora vamos concatenar os dois vetores um do lado do outro usando o program sfcat com o parâmetro axis=1 fazendo com que quando um termine o outro comece na mesma dimensão.
+	
+	sfcat < periodo.rsf periodo2.rsf axis=1 > periodo_cat.rsf
+
+5º PASSO:
+	Por ultimo basta mostrar na tela esse novo vetor:
+	
+	sfdisfil < periodo_cat.rsf
+
+Lista de comando seguidos:
+
+	sfspike n1=20 d1=.33 output="x1" > periodo.rsf
+	sfdisfil < periodo.rsf
+	sfcp < periodo.rsf > periodo2.rsf
+	sfcat < periodo.rsf periodo2.rsf axis=1 > periodo_cat.rsf
+	sfdisfil < periodo_cat.rsf

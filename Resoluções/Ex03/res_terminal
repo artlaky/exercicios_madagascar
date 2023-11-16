@@ -1,0 +1,42 @@
+********** SÉRIE DE COMANDO PARA BOTAR NO TERMINAL E RESOLVER O EXERCÍCIO *****************
+
+1º PASSO:
+	Como já temos os arquivos do ex02 vamos agora somente plotar ele. Como aqui os arquivos estão em diretórios diferentes vamos usado o sfcp para copiar do Ex02/ para o Ex03/.
+	
+	sfcp < Ex02/paraboloide.rsf > Ex03/paraboloide.rsf
+	sfcp < Ex02/paraboloide2.rsf > Ex03/paraboloide2.rsf
+	
+
+2º PASSO:
+	Com os arquivos em mãos, vamos jogar eles em um programa de plot como é o caso do sfgrey.
+	
+	< paraboloide.rsf grey wheretitle=top title="paraboloide-grey" scalebar=y color=j > para_graph.vpl
+	
+	e para vizualizar usamos o sfpen
+	
+	< para_graph.vpl sfpen
+
+3º PASSO:
+	Fazemos exatamente a mesma coisa no sfcontour porem os parâmetros mudam. sugiro que vocês leiam e tentem entender os parametros usando sfcontour sozinho ou entrando na documentação que está no README
+	
+	< paraboloide.rsf contour wheretitle=top title="paraboloide-contour" nc=45 plotfat=5 plotcol=2 > para_graph2.vpl
+	
+	E para vizualizar
+	
+	< para_graph2.vpl sfpen
+	
+4º PASSO:
+	Usamos os mesmo comandos no caso da matriz retangular porem devemos mudar os nomes dos arquivos de entrada para paraboloide2.rsf e os de saida para o nome que você quiser desde que tenha .vpl no fim.
+	
+lista de comandos:
+	sfcp < Ex02/paraboloide.rsf > Ex03/paraboloide.rsf
+	sfcp < Ex02/paraboloide2.rsf > Ex03/paraboloide2.rsf
+	< paraboloide.rsf grey wheretitle=top title="paraboloide-grey" scalebar=y color=j > para_graph.vpl
+	< para_graph.vpl sfpen
+	< paraboloide.rsf contour wheretitle=top title="paraboloide-contour" nc=45 plotfat=5 plotcol=2 > para_graph2.vpl
+	< para_graph2.vpl sfpen
+	< paraboloide2.rsf grey wheretitle=top title="paraboloide-grey" scalebar=y color=j > para_graph3.vpl
+	< para_graph3.vpl sfpen
+	< paraboloide2.rsf contour wheretitle=top title="paraboloide-contour" nc=45 plotfat=5 plotcol=2 > para_graph4.vpl
+	< para_graph4.vpl sfpen
+	

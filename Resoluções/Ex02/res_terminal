@@ -1,0 +1,28 @@
+********** SÉRIE DE COMANDO PARA BOTAR NO TERMINAL E RESOLVER O EXERCÍCIO *****************
+
+1º PASSO:
+	O primeiro passo é criar uma matriz quadrada e calcular os valores da função paraboliode para cada par de coordenadas. 
+	Uma matriz quadrada significa que n1=n2. E para garantir que sempre esse paraboloide estará centrado na origem temos que perceber que o centro dessa matriz será em (n1/2, n2/2) logo a origem deve começar em o= -(n - 2) /2. usando esses conceitos no sfmath
+	 
+	sfmath n1=10 n2=10 o1=-4 o2=-4 output="(x1/2)^2+(x2/2)^2" > paraboloide.rsf
+
+2º PASSO:
+	Uma matriz retangular significa que n1 != n2 logo aqui será mais complicado achar o centro. mas por anologia com o primeiro caso vemos que o centro da matriz fica em ((n1-1)/2, (n2-1)/2) e assim podemos definir as origens com base nesse centro, sendo:
+	
+		o1=-(n1-2) / 2  	e 	 o2=-(n2-2)/2
+
+	sfmath n1=21 n2=11 o1=-9.5 o2=-4.5 output="(x1/2)^2+(x2/2)^2" > paraboloide2.rsf
+
+3º PASSO:
+	É importante usarmos o sfattr para verificarmos se o paraboloide está mesmo com o centrado no centro da matriz. Para isso o valor min deve estar no centro da matriz que pode ser comparado usando as formulas acima:
+
+centro da matriz quadrada:
+			(n1/2, n2/2)
+centro da matriz retangular: 
+			((n1-1)/2, (n2-1)/2)
+
+Lista de comando seguidos:
+	sfmath n1=10 n2=10 o1=-4 o2=-4 output="(x1/2)^2+(x2/2)^2" > paraboloide.rsf
+	sfattr < paraboloide.rsf
+	sfmath n1=21 n2=11 o1=-9.5 o2=-4.5 output="(x1/2)^2+(x2/2)^2" > paraboloide2.rsf
+	sfattr < paraboloide2.rsf
