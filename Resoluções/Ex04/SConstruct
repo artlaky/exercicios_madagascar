@@ -1,0 +1,13 @@
+from rsf.proj import *
+
+Flow('vb', None, 
+     'spike n1=101 n2=201 d1=10 d2=10 k1=0 l1=101 k2=0 l2=201 mag=1500')
+
+Flow('v1', None, 
+     'spike n1=101 n2=201 d1=10 d2=10 k1=31 l1=61 k2=81 l2=121 mag=1700')
+
+Flow('v', ['vb', 'v1'], 'add sacale=1,1 ${SOURCES[1:2]}')
+
+Result('vel_model', 'v', 'grey title=const_vel_model scalebar=y barreverse=y color=j bias=1500 label1=depth unit1=m label2=distance unit2=m barlabel=velocity barunit=m/s')
+
+End()
