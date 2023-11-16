@@ -1,0 +1,14 @@
+from rsf.proj import *
+
+Flow('vb', None, 
+     'math n1=101 n2=201 d1=10 d2=10 output="1500+1.5*x1"')
+
+Flow('v1','vb', 
+     'math output="exp(-.0002*((x1-700)*(x1-700)+(x2-1300)*(x2-1300)))*3000"')
+
+Flow('v', ['vb', 'v1'], 'add scale=1,1 ${SOURCES[1:2]}')
+
+Result('vel_model', 'v', 
+     'grey title=vel_model scalebar=y barreverse=y color=j bias=3000 label1=depth unit1=m label2=distance unit2=m barlabel=velocity barunit=m/s')
+
+End()
